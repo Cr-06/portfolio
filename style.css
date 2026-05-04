@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body a {
+    color: black;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+body ul {
+    list-style-type: none;
+}
+
+#index {
+    background-image: url(images/portfolio-index.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about,
+#contact,
+#projects {
+    background-image: url(images/portfolio-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about section li,
+#about section p {
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+header {
+    background-color: #284B63;
+}
