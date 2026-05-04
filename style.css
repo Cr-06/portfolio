@@ -42,5 +42,23 @@ body ul {
 }
 
 header {
+    display: flex;
     background-color: #284B63;
+}
+
+.head-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.head-list a {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: white;
+}
+
+#cole {
+    border-radius: 50%
 }
