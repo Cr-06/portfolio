@@ -2,90 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cole Rose | Contact</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="contact">
-
     <header>
+        <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
-            <a class="site-name" href="index.html">Cole Rose</a>
-            <ul class="head-list">                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
+            <ul class="head-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="projects.html">Projects ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html">View All Projects</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About me</a></li>
-                <li><a href="contact.html" class="active"><u>Contact</u></a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="contact-main">
-
-
+    <main class="container">
         <div class="contact-layout">
+            <section class="contact-form-section">
+                <h2>Contact Me</h2>
+                <p>Thank you for visiting! Please reach out with any questions.</p>
+                <form name="contact" method="POST" data-netlify="true">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
 
-            <div class="contact-info-col">
-                <p class="contact-tagline">Thank you for visiting my website!</p>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="How can I help you?"
+                        required></textarea>
 
-                <ul class="contact-links">
-                    <li>
-                        <span class="contact-label">Email:</span>
-                        <a href="#">colemrose@gmail.com</a>
-                    </li>
-                    <li>
-                        <span class="contact-label">GitHub:</span>
-                        <a href="https://github.com/Cr-06" target="_blank"
-                            rel="noopener noreferrer">github.com/Cr-06</a>
-                    </li>
-                    <li>
-                        <span class="contact-label">LinkedIn:</span>
-                        <a href="https://www.linkedin.com/in/cole-rose1/" target="_blank"
-                            rel="noopener noreferrer">linkedin.com/in/cole-rose1</a>
-                    </li>
-                </ul>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </section>
 
-
-                <section class="contact-form-section" aria-label="Contact Form">
-                    <h2>Contact Form:</h2>
-                    <form action="#" method="post" novalidate>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Write your message here..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </section>
-            </div>
-
-            <aside class="resume-col" aria-label="Resume">
+            <aside class="resume-col">
                 <h2>Resume</h2>
-                <div class="resume-preview" aria-label="Resume preview">
-                    <img src="#" alt="Preview of my resume" width="180" height="240" />
+                <div class="resume-preview">
+                    <img src="images/resume.png" alt="Cole Rose Resume Preview">
                 </div>
-                <a href="#" class="download-btn" download aria-label="Download resume as PDF">
-                    Download as PDF
-                </a>
+                <a href="images/resume.png" download class="submit-btn"
+                    style="text-decoration:none; margin-top:20px; display:inline-block;">Download as PDF</a>
             </aside>
-
         </div>
+
+        <section class="html-resume">
+            <h1>COLE ROSE</h1>
+            <p>Web Developer | colemrose@gmail.com | github.com/Cr-06</p>
+            <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+                <div>
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5/CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>AI Usage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Experience</h3>
+                    <p><strong>Intern | American Supercars</strong> (2024-Present)</p>
+                    <p><strong>Project Lead | Fresno Chaffee Zoo App</strong> (2025-2026)</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Cole Rose</p>
     </footer>
-
     <script src="main.js"></script>
 </body>
 

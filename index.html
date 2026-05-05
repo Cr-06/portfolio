@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body id="index">
-
+<body>
     <header>
+        <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
-            <a class="site-name" href="index.html">Cole Rose</a>
             <ul class="head-list">
-                <li><a href="index.html" class="active"><u>Home</u></a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="projects.html">Projects ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html">View All Projects</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About me</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -23,23 +27,18 @@
     </header>
 
     <main id="home-main">
-
-        <figure class="self-image-wrapper">
-            <div class="self-image-circle">
-                <img id='cole' src="images/cole.png" alt="Photo of Cole Rose"/>
-            </div>
-        </figure>
-
+        <div class="self-image-circle">
+            <img src="images/cole.png" alt="Cole Rose Profile Picture" />
+        </div>
         <div class="hero-text">
             <p>Hello!</p>
-            <p>Welcome to my Website!</p>
+            <p>Welcome to my Website</p>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Cole Rose</p>
     </footer>
-
     <script src="main.js"></script>
 </body>
 
