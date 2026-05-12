@@ -5,25 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cole Rose | Projects</title>
+
+    <!-- same font setup as every other page, keeps it consistent -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
         <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
             <ul class="head-list">
                 <li><a href="index.html">Home</a></li>
+
+                <!-- dropdown links call showProject() directly so it opens the modal right away -->
                 <li class="dropdown">
                     <a href="projects.html" class="active">Projects ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" onclick="openModal('bioshield')">BioShield</a></li>
-                        <li><a href="#" onclick="openModal('eecu')">EECU Calculator</a></li>
-                        <li><a href="#" onclick="openModal('pawpal')">PawPal</a></li>
-                        <li><a href="#" onclick="openModal('zoo')">Habitat Design Research</a></li>
-                        <li><a href="#" onclick="openModal('poem')">The Author to Her Book</a></li>
+                        <li><a href="#" onclick="showProject('bioshield'); return false;">BioShield</a></li>
+                        <li><a href="#" onclick="showProject('eecu'); return false;">EECU Calculator</a></li>
+                        <li><a href="#" onclick="showProject('pawpal'); return false;">PawPal</a></li>
+                        <li><a href="#" onclick="showProject('zoo'); return false;">Habitat Design Research</a></li>
+                        <li><a href="#" onclick="showProject('poem'); return false;">The Author to Her Book</a></li>
                     </ul>
                 </li>
+
                 <li><a href="about.html">About me</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -31,41 +43,46 @@
     </header>
 
     <main class="container">
-        <h2 style="text-align:center;">Select a Project to View Details</h2>
 
+        <h2 class="projects-heading">Select a Project to View Details</h2>
+
+        <!-- grid auto-fits so it wraps nicely on smaller screens without media queries -->
         <div class="project-grid">
-            <button class="project-card-btn" onclick="openModal('bioshield')">
+
+            <button class="project-card-btn" onclick="showProject('bioshield')">
                 <h3>BioShield Website</h3>
-                <span>Programming | HTML & AI Literacy</span>
+                <span>Programming | HTML &amp; AI Literacy</span>
             </button>
 
-            <button class="project-card-btn" onclick="openModal('eecu')">
+            <button class="project-card-btn" onclick="showProject('eecu')">
                 <h3>EECU Budget Calculator</h3>
-                <span>Programming | Communication & Management</span>
+                <span>Programming | Communication &amp; Management</span>
             </button>
 
-            <button class="project-card-btn" onclick="openModal('pawpal')">
+            <button class="project-card-btn" onclick="showProject('pawpal')">
                 <h3>PawPal</h3>
-                <span>Programming | HTML & CSS Flows</span>
+                <span>Programming | HTML &amp; CSS Flows</span>
             </button>
 
-            <button class="project-card-btn" onclick="openModal('zoo')">
+            <button class="project-card-btn" onclick="showProject('zoo')">
                 <h3>Habitat Design Research</h3>
                 <span>Writing | Fresno Chaffee Zoo</span>
             </button>
 
-            <button class="project-card-btn" onclick="openModal('poem')">
+            <button class="project-card-btn" onclick="showProject('poem')">
                 <h3>The Author to Her Book</h3>
                 <span>Writing | Literary Presentation</span>
             </button>
+
         </div>
     </main>
 
-    <div id="projectModal" class="modal">
+    <!-- modal is hidden by default, showProject() fills in the content before showing it -->
+    <div id="project-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modalBody">
-            </div>
+            <!-- clicking x or outside the modal closes it, both handled in main.js -->
+            <span class="close-modal" onclick="hideProject()">&times;</span>
+            <div id="modal-body"></div>
         </div>
     </div>
 

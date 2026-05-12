@@ -1,3 +1,4 @@
+/* color variables so I dont have to remember the hex codes every time */
 :root {
     --primary-blue: #284B63;
     --accent-green: #50723C;
@@ -5,19 +6,37 @@
     --cream-bg: #FAF4D3;
     --text-dark: #353535;
     --white: #ffffff;
+    /* reusing this on everything that animates */
     --transition: all 0.3s ease;
 }
 
+/* base styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
+    /* stops annoying horizontal scroll on mobile */
     background-color: var(--cream-bg);
-
 }
+
+/* roboto only for headings and the big number stats */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-name,
+.hero-name,
+.stat-number,
+.resume-section-heading {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*header / nav */
 
 header {
     display: flex;
@@ -31,6 +50,7 @@ header {
     transition: var(--transition);
 }
 
+/* class gets added by js when you scroll past 50px */
 .nav-scrolled {
     background-color: rgba(40, 75, 99, 0.98);
     padding: 0.6rem 5%;
@@ -60,6 +80,8 @@ header {
     transition: var(--transition);
 }
 
+/*dropdown menu*/
+
 .dropdown {
     position: relative;
 }
@@ -76,6 +98,7 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* css-only hover dropdown, no js needed */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -90,12 +113,15 @@ header {
     background: var(--accent-green);
 }
 
+/*home page hero*/
+
 #home-main {
     height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* diagonal stripe gradient using the site color palette */
     background: linear-gradient(135deg, var(--cream-bg) 25%, var(--neutral-gray) 25%, var(--neutral-gray) 50%, var(--accent-green) 50%, var(--accent-green) 75%, var(--primary-blue) 75%);
     text-align: center;
 }
@@ -114,21 +140,53 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* keeps the photo from stretching weird */
 }
 
-.hero-text p {
-    background: white;
-    padding: 12px 24px;
-    display: inline-block;
-    margin: 5px;
-    font-weight: bold;
-    border-radius: 4px;
+.hero-name {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
 }
+
+.hero-tagline {
+    font-style: italic;
+    color: var(--primary-blue);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin: 0 0 1rem;
+}
+
+/* skill tags under the name */
+.hero-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.hero-pills span {
+    background: white;
+    padding: 6px 18px;
+    border-radius: 999px;
+    /* fully rounded pill shape */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    border: 2px solid var(--accent-green);
+}
+
+/* general layout*/
 
 .container {
     padding: 5% 10%;
 }
 
+.projects-heading {
+    text-align: center;
+}
+
+/* project cards, auto-fit means it wraps automatically, no media query needed for this */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -156,8 +214,11 @@ header {
     color: white;
 }
 
+/* modal (project detail popup)*/
+
 .modal {
     display: none;
+    /* hidden until showProject() is called */
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -177,6 +238,7 @@ header {
     max-width: 700px;
     position: relative;
     animation: reveal 0.4s ease;
+    /* slides up when it opens */
 }
 
 .close-modal {
@@ -188,6 +250,45 @@ header {
     color: var(--neutral-gray);
 }
 
+.modal-img-wrap {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream-bg);
+}
+
+.modal-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* green label that says Programming or Writing */
+.modal-type-tag {
+    display: inline-block;
+    background: var(--accent-green);
+    color: white;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.modal-tools {
+    font-size: 0.9rem;
+    color: var(--neutral-gray);
+    margin-bottom: 1rem;
+}
+
+/* about page cards, reusing this card style across about and contact pages */
 .case-study-card {
     background: white;
     padding: 2.5rem;
@@ -197,6 +298,69 @@ header {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/*stats bar (about page)*/
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    background: var(--primary-blue);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: white;
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/*  honors grid */
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.honor-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.honor-item p {
+    margin: 4px 0 0;
+    font-size: 0.9rem;
+    color: var(--neutral-gray);
+}
+
+/* growth and project entries */
+
+.growth-section {
+    margin-bottom: 2rem;
+}
+
+.project-entry {
+    margin-bottom: 1.5rem;
+}
+
+/* contact page */
+
+/* side by side on desktop, stacks on mobile */
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,6 +388,28 @@ header {
     font-weight: bold;
 }
 
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: block;
+    color: var(--primary-blue);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+/* slight indent on hover to give it some movement */
+.social-link:hover {
+    color: var(--accent-green);
+    padding-left: 6px;
+}
+
+/* resume section (contact page) */
+
 .html-resume {
     background: white;
     padding: 2rem;
@@ -247,6 +433,110 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.resume-download {
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.resume-header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid var(--accent-green);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.resume-name-block h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    letter-spacing: 0.05em;
+}
+
+.resume-title {
+    margin: 4px 0 0;
+    font-size: 1rem;
+    color: var(--neutral-gray);
+    letter-spacing: 0.1em;
+}
+
+/* right-aligned on desktop, swaps to left on mobile */
+.resume-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+.resume-contact-list a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.resume-section {
+    margin-bottom: 1.5rem;
+}
+
+.resume-section-heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid var(--text-dark);
+    padding-bottom: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.resume-entry {
+    margin-bottom: 1.2rem;
+}
+
+.resume-entry-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.resume-entry-title {
+    font-weight: 600;
+}
+
+.resume-date {
+    font-size: 0.85rem;
+    color: var(--neutral-gray);
+}
+
+.resume-entry ul {
+    margin: 0.5rem 0 0 1.2rem;
+    padding: 0;
+}
+
+.resume-entry li {
+    margin-bottom: 0.3rem;
+    font-size: 0.92rem;
+}
+
+.resume-entry p {
+    margin: 0.25rem 0;
+    font-size: 0.92rem;
+}
+
+/* 1/3 left, 2/3 right for education vs skills */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+/* animation */
+
+/* used on modal open */
 @keyframes reveal {
     from {
         opacity: 0;
@@ -259,9 +549,31 @@ header {
     }
 }
 
+/* footer */
+
 footer {
     text-align: center;
     padding: 2rem;
     background: var(--primary-blue);
     color: white;
+}
+
+ /* mobile responsive */
+
+@media (max-width: 600px) {
+
+    /* stacks both grids to single column on small screens */
+    .resume-grid,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-header-block {
+        flex-direction: column;
+    }
+
+    /* flip contact list alignment since it doesnt make sense right-aligned when stacked */
+    .resume-contact-list {
+        text-align: left;
+    }
 }

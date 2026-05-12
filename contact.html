@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cole Rose | Contact</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- id on body in case i need to target this page specifically with css later -->
+
 <body id="contact">
+
     <header>
         <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
@@ -27,11 +37,19 @@
     </header>
 
     <main class="container">
+
+        <!-- two column layout - form on left, resume preview on right -->
         <div class="contact-layout">
+
             <section class="contact-form-section">
                 <h2>Contact Me</h2>
-                <p>Thank you for visiting! Please reach out with any questions.</p>
+                <p>Thank you for visiting my portfolio! Whether you're a recruiter, collaborator, or just curious, I
+                    would
+                    love to hear from you.</p>
+
+                <!-- netlify handles the form submission, data-netlify does the work -->
                 <form name="contact" method="POST" data-netlify="true">
+
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -39,47 +57,151 @@
                     <input type="email" id="email" name="email" placeholder="your@email.com" required>
 
                     <label for="message">Message</label>
+                    <!-- rows=6 felt like the right height, not too small not too tall -->
                     <textarea id="message" name="message" rows="6" placeholder="How can I help you?"
                         required></textarea>
 
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+
+                <!-- social links styled to look like a list but just anchor tags -->
+                <div class="social-links">
+                    <h3>Find Me Online:</h3>
+                    <a href="https://github.com/Cr-06" target="_blank" rel="noopener" class="social-link">GitHub —
+                        github.com/Cr-06</a>
+                    <a href="https://linkedin.com/in/cole-rose1/" target="_blank" rel="noopener"
+                        class="social-link">LinkedIn — linkedin.com/in/cole-rose1/</a>
+                </div>
             </section>
 
+            <!-- resume preview image and download button -->
             <aside class="resume-col">
                 <h2>Resume</h2>
                 <div class="resume-preview">
+                    <!-- screenshot of the pdf -->
                     <img src="images/resume.png" alt="Cole Rose Resume Preview">
                 </div>
-                <a href="images/resume.png" download class="submit-btn"
-                    style="text-decoration:none; margin-top:20px; display:inline-block;">Download as PDF</a>
+                <a href="images/resume.pdf" download class="submit-btn resume-download">Download PDF</a>
             </aside>
+
         </div>
 
+        <!-- inline html version of my resume -->
         <section class="html-resume">
-            <h1>COLE ROSE</h1>
-            <p>Web Developer | colemrose@gmail.com | github.com/Cr-06</p>
-            <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 20px;">
-                <div>
-                    <h3>Skills</h3>
+
+            <div class="resume-header-block">
+                <div class="resume-name-block">
+                    <h1>COLE ROSE</h1>
+                    <p class="resume-title">WEB DEVELOPER</p>
+                </div>
+                <!-- contact info aligned right on desktop, switches to left on mobile via media query -->
+                <ul class="resume-contact-list">
+                    <li>+1 (559) 444-3622</li>
+                    <li><a href="mailto:colemrose@gmail.com">colemrose@gmail.com</a></li>
+                    <li><a href="https://linkedin.com/in/cole-rose1/" target="_blank">linkedin.com/in/cole-rose1/</a>
+                    </li>
+                    <li><a href="https://github.com/Cr-06" target="_blank">github.com/Cr-06</a></li>
+                </ul>
+            </div>
+
+            <div class="resume-section">
+                <h3 class="resume-section-heading">Summary</h3>
+                <p>Results-driven web developer with hands-on experience leading cross-functional teams to build
+                    user-centered mobile applications. Proficient in HTML5, CSS3, and JavaScript, leveraging AI-assisted
+                    workflows to optimize development and reduce project timelines. Proven ability to translate complex
+                    design wireframes into high-quality, high-performance digital solutions.</p>
+            </div>
+
+            <div class="resume-section">
+                <h3 class="resume-section-heading">Employment History</h3>
+                <div class="resume-entry">
+                    <div class="resume-entry-header">
+                        <span class="resume-entry-title">American Supercars &amp; Get Used Tesla | Intern</span>
+                        <span class="resume-date">July 2024 – Present</span>
+                    </div>
                     <ul>
-                        <li>HTML5/CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>AI Usage</li>
+                        <li>Support shop operations for two specialized dealerships focusing on American
+                            high-performance vehicles and pre-owned Tesla inventory</li>
+                        <li>Assist with the physical maintenance, reconditioning, and preparation of vehicles to ensure
+                            they meet "top condition"</li>
+                        <li>Maintain a high level of precision and attention to detail while following complex technical
+                            instructions in a high-stakes automotive environment</li>
+                        <li>Collaborate effectively with management to ensure efficient workflow in a 10,000 sq. ft.
+                            facility</li>
                     </ul>
                 </div>
-                <div>
-                    <h3>Experience</h3>
-                    <p><strong>Intern | American Supercars</strong> (2024-Present)</p>
-                    <p><strong>Project Lead | Fresno Chaffee Zoo App</strong> (2025-2026)</p>
+            </div>
+
+            <div class="resume-section">
+                <h3 class="resume-section-heading">Professional Projects</h3>
+                <div class="resume-entry">
+                    <div class="resume-entry-header">
+                        <span class="resume-entry-title">Project Lead / Developer | Fresno Chaffee Zoo App</span>
+                        <span class="resume-date">Oct 2025 – Jan 2026</span>
+                    </div>
+                    <ul>
+                        <li>Engineered a responsive web application for the Fresno Chaffee Zoo using a mobile-first
+                            design approach</li>
+                        <li>Bridged the gap between design and development by translating Figma wireframes into clean,
+                            semantic code</li>
+                        <li>Acted as Project Lead for a team of 6 developers and designers, ensuring 100% of project
+                            milestones were met</li>
+                        <li>Technologies: HTML5, CSS3, JavaScript, Figma, GitHub, UI/UX Design</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- two column grid for education and skills side by side -->
+            <div class="resume-grid">
+
+                <div class="resume-left">
+                    <div class="resume-section">
+                        <h3 class="resume-section-heading">Education</h3>
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <span class="resume-entry-title">Buchanan High School (Clovis, CA)</span>
+                                <span class="resume-date">2022 – 2026</span>
+                            </div>
+                            <p>High School Diploma | June 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3 class="resume-section-heading">Professional Education</h3>
+                        <div class="resume-entry">
+                            <div class="resume-entry-header">
+                                <span class="resume-entry-title">Center for Advanced Research and Technology (Clovis,
+                                    CA)</span>
+                                <span class="resume-date">2024 – 2026</span>
+                            </div>
+                            <p>Business and Finance ROP Class (2024–2025)</p>
+                            <p>Web Application Class (2025–2026)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-right">
+                    <div class="resume-section">
+                        <h3 class="resume-section-heading">Core Competencies</h3>
+                        <ul>
+                            <li>Technical Skills: HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>Design/Tools: Figma, Microsoft Excel, GitHub</li>
+                            <li>Concepts: UI/UX Design, Responsive Design, Team Collaboration</li>
+                            <!-- listing ai tools because knowing how to use them is a skill now lol-->
+                            <li>AI Literacy: Claude, ChatGPT, Gemini, GitHub Copilot</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </section>
+
     </main>
 
     <footer>
         <p>&copy; 2026 Cole Rose</p>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

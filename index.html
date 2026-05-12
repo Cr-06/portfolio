@@ -5,40 +5,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cole Rose | Home</title>
+
+    <!-- google fonts, roboto for headings and montserrat for everything else -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+    <!-- sticky header, scroll effect handled in main.js -->
     <header>
         <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
             <ul class="head-list">
                 <li><a href="index.html" class="active">Home</a></li>
+
+                <!-- dropdown just uses css hover, no js needed for this part -->
                 <li class="dropdown">
                     <a href="projects.html">Projects ▾</a>
                     <ul class="dropdown-menu">
                         <li><a href="projects.html">View All Projects</a></li>
                     </ul>
                 </li>
+
                 <li><a href="about.html">About me</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- hero section, the diagonal gradient background is all css -->
     <main id="home-main">
+
+        <!-- circle image - tried making this a border-image at first, didnt work great -->
         <div class="self-image-circle">
             <img src="images/cole.png" alt="Cole Rose Profile Picture" />
         </div>
+
         <div class="hero-text">
-            <p>Hello!</p>
-            <p>Welcome to my Website</p>
+            <h1 class="hero-name">Cole Rose</h1>
+            <p class="hero-tagline">Web Developer · Future Systems Analyst · CART Graduate</p>
+
+            <!-- pills just for a quick visual skill summary -->
+            <div class="hero-pills">
+                <span>HTML &amp; CSS</span>
+                <span>JavaScript</span>
+                <span>Chico State BIS '30</span>
+            </div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Cole Rose</p>
     </footer>
+
     <script src="main.js"></script>
 </body>
 

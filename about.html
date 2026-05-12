@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cole Rose | About & Growth</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
         <a class="site-name" href="index.html">Cole Rose</a>
         <nav>
@@ -27,122 +35,186 @@
     </header>
 
     <main class="container">
+
+        <!-- quick stats at the top, just a visual thing to show what i've done at a glance -->
+        <section class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Years at CART</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Programming Studies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2026</span>
+                <span class="stat-label">Graduating Class</span>
+            </div>
+        </section>
+
+        <!-- honors section -->
         <article class="case-study-card">
-            <h2 style="color: var(--primary-blue);">My Growth Story</h2>
-            <div style="margin-bottom: 2rem;">
+            <h2>Honors &amp; Awards</h2>
+
+            <!-- tried using a grid here but just went with stacked divs, simpler -->
+            <div class="honors-grid">
+                <div class="honor-item">
+                    <span class="honor-icon">🏆</span>
+                    <div>
+                        <strong>CART Spring Showcase Participant</strong>
+                        <p>Selected to present personal portfolio at the annual Spring Showcase, 2026.</p>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <span class="honor-icon">📜</span>
+                    <div>
+                        <strong>EECU Sponsored Project</strong>
+                        <p>Contributed to a real-world client project sponsored by Educational Employees Credit Union.
+                        </p>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <span class="honor-icon">🌿</span>
+                    <div>
+                        <strong>Fresno Chaffee Zoo Collaboration</strong>
+                        <p>Worked directly with the Fresno Chaffee Zoo on a habitat design research and app project.</p>
+                    </div>
+                </div>
+                <div class="honor-item">
+                    <span class="honor-icon">💻</span>
+                    <div>
+                        <strong>CART Web App Program</strong>
+                        <p>Completed the full-year CART Web App curriculum covering HTML, CSS, JavaScript, and
+                            professional development.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="case-study-card">
+            <h2>My Growth Story</h2>
+
+            <div class="growth-section">
                 <h3>1. The Starting Point (August – October)</h3>
                 <p>I entered the CART Web App program with a very vague understanding of how the internet and coding
-                    worked, and everytime I saw code it looked like magic to me. My first hurdle was after learning all
-                    the meaning of the code, staring at a blank VS code file and being overwhelmed by the possibilities.
+                    worked, and every time I saw code it looked like magic to me. My first hurdle was after learning all
+                    the meaning of the code, staring at a blank VS Code file and being overwhelmed by the possibilities.
                     Projects like BioShield taught me that while AI is a powerful tool, it is solely my job to
                     understand the logic behind my code and the code that AI would generate.</p>
             </div>
-            <div style="margin-bottom: 2rem;">
+
+            <div class="growth-section">
                 <h3>2. The "Aha!" Moments (November – February)</h3>
-                <p>The turning point came during the PawPal project. For the first time, HTML and CSS weren’t separate
+                <p>The turning point came during the PawPal project. For the first time, HTML and CSS weren't separate
                     in a full project in parts, rather unified code to build a website. I realized that coding isn't
                     just about making things look good, but solving problems for users by how they interact with the
                     page. I stopped working with my own ideas and expanded with my peers to figure out the best path for
                     my team project.</p>
             </div>
-            <div>
+
+            <div class="growth-section">
                 <h3>3. The Professional Turn (March – May)</h3>
-                <p>This portfolio represents my transition from a student who just “knows some code” to a developer who
+                <p>This portfolio represents my transition from a student who just "knows some code" to a developer who
                     understands coding and all of the logic that goes into it. By implementing modern tools like CSS and
-                    Javascript, I have proven that I can keep pace with a highly competitive field. I no longer just
-                    write lines of code, I build websites.</p>
+                    JavaScript, I have proven that I can keep pace with a highly competitive field. I no longer just
+                    write lines of code — I build websites.</p>
             </div>
         </article>
 
+        <!-- detailed breakdown of each project, more depth than the modal cards on projects.html -->
         <article class="case-study-card">
-            <h2 style="color: var(--primary-blue);">Detailed Project Experience</h2>
+            <h2>Detailed Project Experience</h2>
 
-            <div style="margin-bottom: 1.5rem;">
+            <div class="project-entry">
                 <strong>Programming: BioShield Website</strong>
                 <p>With a classmate, I created a fully functional website with only HTML knowledge. With only HTML in
                     our arsenal, we used our extensive AI literacy to help us along and create a project that could:
-                    take orders from users, by users clicking add to basket, it would then be added to that basket and
-                    the cost would be calculated off of the price and the quantity of items that were clicked by the
-                    user.</p>
+                    take orders from users — by clicking "add to basket," items were added and the cost calculated from
+                    price and quantity selected by the user.</p>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
+            <div class="project-entry">
                 <strong>Programming: EECU Budget Calculator</strong>
-                <p>EECU sponsored my school, under the condition that students created a budget calculator for future
-                    use that EECU may want. Although our teacher gave us a condition, for the majority of the project we
-                    could only have our peers work on the project. It took massive amounts of communication and managing
-                    to attempt to get exactly what I had in mind, to navigate this I had to use my communication skills
-                    and pre-made goals and visions for the project that my peers could go off of.</p>
+                <p>EECU sponsored my school under the condition that students created a budget calculator for potential
+                    future use. For the majority of the project, only peers could work on it, requiring massive amounts
+                    of communication and coordination. I had to use my communication skills and pre-made goals so my
+                    peers had a clear vision to go off of.</p>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
+            <div class="project-entry">
                 <strong>Programming: PawPal</strong>
-                <p>I worked with a singular partner to utilize our HTML and CSS knowledge and create a full website with
-                    several flows (pages) that users can navigate through. The website shows off a pet tracker site
-                    where you can navigate your pet through a tracker that you can put on by either collar or other type
-                    of accessory.</p>
+                <p>Working with one partner, we used our HTML and CSS knowledge to build a full multi-page website. The
+                    site showcases a pet tracker platform where users can follow their pet through a tracker attached
+                    by collar or other accessory.</p>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
+            <div class="project-entry">
                 <strong>Writing: Research Paper (How Habitat Design Shapes Animal Behavior)</strong>
-                <p>After working with the Fresno Chaffee Zoo, our class was assigned an essay that would revolve around
-                    the topics that we learned and worked on with the zoo. In this essay I focused on the idea of how
-                    animals are kept busy while living in personal and small habitats through most of their lives.</p>
+                <p>After working with the Fresno Chaffee Zoo, our class wrote an essay built around what we learned
+                    on-site. I focused on how animals stay mentally engaged while living in contained habitats over most
+                    of their lives.</p>
             </div>
 
-            <div>
+            <div class="project-entry">
                 <strong>Writing: The Author to Her Book Presentation</strong>
-                <p>In a team of three, we were tasked with a presentation about the meaning and our understanding of the
-                    poem, The Author to Her Book. We created a slideshow and template, then presented our knowledge and
-                    interpretation of what we were going to say about the poem and how the author connects the words
-                    inside of it to her personal life.</p>
+                <p>In a team of three, we broke down the meaning of the poem "The Author to Her Book," created a
+                    slideshow, and presented our interpretation — including how the author connects the poem's language
+                    to her own personal experiences.</p>
             </div>
         </article>
 
+        <!-- 5 year plan section -->
         <article class="case-study-card">
-            <h2 style="color: var(--primary-blue);">My 5-year Plan</h2>
+            <h2>My 5-Year Plan</h2>
 
             <div class="plan-year">
                 <h3>Year 1</h3>
                 <p><strong>Goal:</strong> Graduate from Buchanan High School and CART.</p>
                 <p><strong>Action Plan:</strong> Complete and add projects to my portfolio.</p>
-                <p><strong>Milestone:</strong> Go to California State University, Chico for the Business Information
+                <p><strong>Milestone:</strong> Enroll in California State University, Chico. For the Business
+                    Information
                     Systems Program.</p>
             </div>
 
             <div class="plan-year">
-                <h3>Year 2-3</h3>
+                <h3>Years 2–3</h3>
                 <p><strong>Goal:</strong> Shift from pure coding to understanding how technology solves business
                     problems.</p>
-                <p><strong>Action Plan:</strong> Focus on core BIS work at Chico State, including database management,
+                <p><strong>Action Plan:</strong> Focus on core BIS coursework at Chico State: database management,
                     systems analysis, and business analytics.</p>
-                <p><strong>Technical Growth:</strong> Maintain my programming skills by contributing to open-source
-                    projects or taking on freelance web development work to keep my portfolio active.</p>
+                <p><strong>Technical Growth:</strong> Keep coding skills sharp through open-source contributions or
+                    freelance web work to maintain an active portfolio.</p>
             </div>
 
             <div class="plan-year">
                 <h3>Year 4</h3>
                 <p><strong>Goal:</strong> Prepare for the transition into the corporate tech world.</p>
-                <p><strong>Action Plan:</strong> Pursue an internship in northern California. Looking into
-                    certifications that can connect tech and business.</p>
-                <p><strong>Milestone:</strong> Complete senior project at Chico State, ideally focused on a real world
+                <p><strong>Action Plan:</strong> Pursue an internship in Northern California and explore certifications
+                    that bridge tech and business.</p>
+                <p><strong>Milestone:</strong> Complete senior project at Chico State, ideally centered on a real-world
                     business system implementation.</p>
             </div>
 
             <div class="plan-year">
                 <h3>Year 5</h3>
-                <p><strong>Goal:</strong> Secure a job for Systems Analyst or something similar.</p>
-                <p><strong>Action Plan:</strong> Use the Chico State network to land a role where I can optimize
-                    business workflows using my background skills.</p>
-                <p><strong>The Vision:</strong> Use my knowledge of speaking both code and business to help companies
-                    scale their digital infrastructure efficiently.</p>
+                <p><strong>Goal:</strong> Secure a role as a Systems Analyst or similar position.</p>
+                <p><strong>Action Plan:</strong> Leverage the Chico State alumni network to land a role where I can
+                    optimize business workflows using my technical background.</p>
+                <p><strong>The Vision:</strong> Use my ability to speak both code and business to help companies scale
+                    their digital infrastructure efficiently.</p>
             </div>
         </article>
+
     </main>
 
     <footer>
         <p>&copy; 2026 Cole Rose</p>
     </footer>
+
     <script src="main.js"></script>
 </body>
 
