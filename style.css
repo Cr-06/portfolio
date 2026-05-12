@@ -154,6 +154,9 @@ header {
     color: var(--primary-blue);
     font-size: clamp(1rem, 2.5vw, 1.3rem);
     margin: 0 0 1rem;
+    background-color: var(--white);
+    padding: 1vh;
+    border-radius: 10px;
 }
 
 /* skill tags under the name */
